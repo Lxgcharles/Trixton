@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		exercise1
+	</title>
+</head>
+
+<body>
+	<div style="text-align:center;">
+		<h1>Choose a Door</h1>
+		<img id="door1" src="images/door1.png" alt="Door">
+		<img id="door2" onmouseover="changeImgSrc(this, 'images/goat.png')" onmouseout="changeImgSrc(this, 'images/door2.png')" src="images/door2.png" alt="Door 2">
+		<img id="door3" src="images/door3.png" alt="Door">
+	</div>
+	<script>
+		const door1 = document.querySelector("#door1")
+		function changeImgSrcToGoat(door) {
+			door.src = "images/goat.png"
+		}
+   		
+		const door3 = document.querySelector("#door3")
+		function changeImgSrcToHawaii(door) {
+			door.src = "images/hawaii.png"
+		}
+		
+		function changeImgSrc(door, img) {
+			// console.log(door)
+			door.src = img
+		}
+
+		door1.addEventListener("mouseover", function () { changeImgSrc(door1, "images/goat.png") });
+		door1.addEventListener("mouseout", function () { changeImgSrc(door1, "images/door1.png") });
+		
+		door3.addEventListener("mouseover", function () { changeImgSrc(door3, "images/hawaii.png") });
+		door3.addEventListener("mouseout", function () {changeImgSrc(door3, "images/door3.png")})
+
+	</script>
+
+</body>
+
+</html>
