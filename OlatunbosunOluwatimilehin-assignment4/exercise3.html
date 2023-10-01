@@ -1,15 +1,46 @@
 ﻿<!DOCTYPE html>
 <html>
-	<head></head>
-	<body>
-		<div style="text-align:center;">
+
+<head></head>
+
+<body>
+	<div style="text-align: center">
 		<h1>Choose a Door</h1>
-			<img id="door1" src="images/door1.png" alt="Door 1">
-			<img id="door2" src="images/door2.png" alt="Door 2">
-			<img id="door3" src="images/door3.png" alt="Door 3">
-			<p>
-<!-- put buttons here -->
-			</p>
-		</div>
+		<img id="door1" src="images/door1.png" alt="Door 1" />
+		<img id="door2" src="images/door2.png" alt="Door 2" />
+		<img id="door3" src="images/door3.png" alt="Door 3" />
+		<p>
+			<!-- put buttons here -->
+			<button id="doorButton1" type="button">Door 1</button>
+			<button id="doorButton2" type="button">Door 2</button>
+			<button id="doorButton3" type="button">Door 3</button>
+			<button id="doorButtonReset" type="reset">Reset</button>
+		</p>
+	</div>
+	<script>
+		const button1=document.querySelector("#doorButton1") 
+		const button2=document.querySelector("#doorButton2")
+		const button3=document.querySelector("#doorButton3")
+		const buttonReset=document.querySelector("#doorButtonReset")
+
+		const door1=document.querySelector("#door1")
+		const door2=document.querySelector("#door2")
+		const door3=document.querySelector("#door3")
+
+		function changeImgSrc(door, img){
+			door.src=img
+		}
+
+		button1.addEventListener("click" ,function (){changeImgSrc(door1, "images/goat.png")})
+		button2.addEventListener("click" ,function (){changeImgSrc(door2, "images/goat.png")})
+		button3.addEventListener("click" ,function (){changeImgSrc(door3, "images/hawaii.png")})
+		buttonReset.addEventListener("click" , function () {
+			door1.src="images/door1.png"
+			door2.src="images/door2.png"
+			door3.src="images/door3.png"
+
+		})
+	</script>
 </body>
+
 </html>

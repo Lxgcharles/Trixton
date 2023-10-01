@@ -40,6 +40,22 @@ despairing over an imperfect one. So let the good be your friend. </p>
 </div>
    
 <hr/>
+<button onclick="document.querySelector('#Message').style.fontSize='1em'" >Normal</button>
+<button onclick="document.querySelector('#Message').style.fontSize='1.5em'" >Medium</button>
+<button onclick="document.querySelector('#Message').style.fontSize='2em'">Large</button>
+<script>
+  const pTags=document.querySelectorAll("p")
+  pTags.forEach((pTag)=>{
+    pTag.addEventListener('mouseover',function () {
+      pTag.style.color='yellow'
+      pTag.style.backgroundColor='black'
+    })
+    pTag.addEventListener('mouseout',function () {
+      pTag.style.color='black'
+      pTag.style.backgroundColor='white'
+    })
+  })
+</script>
 
 </body>
 </html>

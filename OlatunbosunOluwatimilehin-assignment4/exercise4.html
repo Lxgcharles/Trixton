@@ -1,15 +1,66 @@
 ﻿<!DOCTYPE html>
 <html>
-	<head></head>
-	<body>
-	<div style="text-align:center;">
-		<h1>Inspirational Quotes</h1>
-			<img src="images/wooden.png" alt="John Wooden" height="385" width="303">
-			<img src="images/jerome.png" alt="St. Jerome" height="385" width="303">
-			<img src="images/dyer.jpg" alt="Dr. Wayne Dyer" height="385" width="303">
-			</div>
-	<hr>
-		<div id="outputDiv" style="text-align:center;">
-	 	</div>
-</body>
-	</html>
+  <head></head>
+  <body>
+    <div style="text-align: center">
+      <h1>Inspirational Quotes</h1>
+      <img
+        id="johnWooden"
+        src="images/wooden.png"
+        alt="John Wooden"
+        height="385"
+        width="303"
+      />
+      <img
+        id="jerome"
+        src="images/jerome.png"
+        alt="St.Jerome"
+        height="385"
+        width="303"
+      />
+      <img
+        id="wayne"
+        src="images/dyer.jpg"
+        alt="Dr.Wayne Dyer"
+        height="385"
+        width="303"
+      />
+    </div>
+    <hr />
+    <div id="outputDiv" style="text-align: center"></div>
+    <script>
+      const img1 = document.querySelector("#johnWooden");
+      const img2 = document.querySelector("#jerome");
+      const img3 = document.querySelector("#wayne");
+      const outputDiv = document.querySelector("#outputDiv");
+
+      function showQuote(quote, author) {
+        const template = `
+				<h2>
+					${quote}
+					<i>
+						${author}
+						</i>
+					</h2>
+				`;
+        outputDiv.innerHTML = template;
+      }
+      const quote1 =
+        "Things work out best for those who make the best of how things out. ";
+
+      const quote2 =
+	   "Good,better,best.Never let it rest. Till your good is better and your better is best.";
+      const quote3 =
+        "My goal is not to be bettr than anyone else,but to be better than I used to be.";
+      img1.addEventListener("click", function () {
+        showQuote(quote1, "John Wooden");
+      });
+	  img2.addEventListener("click", function () {
+        showQuote(quote2, "St. Jerome");
+      });
+	  img3.addEventListener("click", function () {
+        showQuote(quote3, "Dr.wayne Dyer");
+      });
+    </script>
+  </body>
+</html>
